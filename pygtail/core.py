@@ -181,7 +181,7 @@ class Pygtail(object):
             if filename.endswith('.gz'):
                 self._fh = gzip.open(filename, 'r')
             else:
-                self._fh = open(filename, "r", 1)
+                self._fh = open(filename, "r", 1, encoding="utf-8")
             if self.read_from_end and not exists(self._offset_file):
                 self._fh.seek(0, os.SEEK_END)
             else:
